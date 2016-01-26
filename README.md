@@ -48,4 +48,6 @@ https://github.com/rstaib/jquery-bootgrid
 php-activerecord
 www.phpactiverecord.org
 
-This is basic example to provide full CRUD (scaffolding like) using ajax desingned for jquery-bootgrid.
+This is a basic example to provide an easy quick full Ajax CRUD operations (scaffolding like) using php-activerecord orm desingned for jquery-bootgrid, it's not ready for production use.
+
+Feel free to fork/push requests for any reason.
