@@ -1,0 +1,8 @@
+{
+    "all": "Tous",
+    "infos": "Afficher de {{ctx.start}} &agrave; {{ctx.end}} sur {{ctx.total}} entr&eacute;es",
+    "loading": "Chargement...",
+    "noResults": "Aucun r&eacute;sultat trouv&eacute;!",
+    "refresh": "Actualiser",
+    "search": "Rechercher"
+}
