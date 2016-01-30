@@ -247,7 +247,19 @@ $(function(){
                 }
             });
             event.preventDefault();            
-		});          
+		});
+		
+		$('#btn-delete').on("click", function(){
+		var row = $(this).attr('data-row-id'); 
+		$.post("<?= $this_file ?>", {delete: row}).done(function(data){
+		    if (data === "0"){
+		        console.log("Object deleted successfully.");
+		    } else {
+		        console.log(data);                    
+		    }
+		    $("#grid").bootgrid('reload');
+		});                
+		});		
             
         }); //$()
         
@@ -276,25 +288,11 @@ $(function(){
         } //createModel()
         
         function deleteModel(sender){
-            $('#btn-delete').attr('data-row-id', $(sender).attr('data-row-id'));
+            var row = $(sender).attr('data-row-id');
+            $('#btn-delete').attr('data-row-id', row);
+            $('#row-id').text(row);        
             $('#modal-delete').modal();
         }
-            
-       $('#modal-delete').one('show.bs.modal', function (event) {
-           var btnDelete = $(this).find($('#btn-delete'));
-           var row = btnDelete.attr('data-row-id');
-           $('#row-id').text('N°'+row);
-           btnDelete.click(function(){
-            $.post("<?= $this_file ?>", {delete: row}).done(function(data){
-                if (data === "0"){
-                    console.log("Object deleted successfully.")
-                } else {
-                    console.log(data);                    
-                }
-                $("#grid").bootgrid('reload');
-            });
-          });
-        });
 		
 	/*/load json file
 	function loadJson(jsonFile){
